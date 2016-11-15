@@ -1,0 +1,11 @@
+DEVICE=eth0
+HWADDR=64:00:6A:5A:B8:17
+TYPE=Ethernet
+UUID=f3328080-7931-42d3-b80c-b5af0bf18e0d
+ONBOOT=yes
+NM_CONTROLLED=yes
+#BOOTPROTO=static
+BRIDGE="xenbr0"
+check_link_down(){
+  return 1;
+}

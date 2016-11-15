@@ -1,0 +1,11 @@
+DEVICE=xenbr0
+TYPE=Bridge
+IPADDR=192.168.1.122
+NETMASK=255.255.255.0
+GATEWAY=192.168.1.1
+ONBOOT=yes
+NM_CONTROLLED=yes
+BOOTPROTO=static
+check_link_down(){
+  return 1;
+}

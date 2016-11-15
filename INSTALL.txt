@@ -1,0 +1,1 @@
+安装步骤详见：opencran.org Document模块Tutorial中的Xen安装使用教程

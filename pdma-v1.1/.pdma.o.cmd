@@ -1,0 +1,1 @@
+cmd_/home/virtual/pdma-v1.1-src/pdma.o := ld -m elf_x86_64   -r -o /home/virtual/pdma-v1.1-src/pdma.o /home/virtual/pdma-v1.1-src/pdma-src.o /home/virtual/pdma-v1.1-src/pdma-user-intr.o ; scripts/mod/modpost /home/virtual/pdma-v1.1-src/pdma.o
