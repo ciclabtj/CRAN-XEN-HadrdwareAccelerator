@@ -1,17 +1,2 @@
-此版本代码，只支持多个虚拟机共享一个硬件加速器
-1. 执行configure_file/load_xenbus_dev.sh 
-   参数是domtest domu_id  //domu_id是虚拟机的id
-2. 先配置FPGA，使其具有硬件加速功能，加载驱动
-   cd pdma-v1.1
-   sh build-all /lib/modules/$(shell uname -r)/build   //参数是内核目录
-   sh pdma-load.sh block=4KB
-3. cd PHY_Dom0_code
-   sudo make
-   insmod xen-chrback.ko
-4. 在虚拟机中
-   cd VM_DomU_code
-   sudo make
-   insmod xen-chrfront.ko
-   进入测试目录测试：
-   cd test_example
-   sh one_time_write_read.sh 64  //64个字节的译码
+Virtualized hardware accelerators based on Xen in C-RAN
+安装步骤详见：opencran.org Document模块Tutorial中的Xen安装使用教程或是INSTALL文件
