@@ -221,7 +221,7 @@ static ssize_t chrif_read(struct file *filp, char *buf, size_t len, loff_t *off)
     struct chrfront_info *info = filp->private_data;
 	printk(KERN_DEBUG "\nxen: DomU: chrif_read()- entry");
 	
-	wait_for_completion(&comp_write);
+	wait_for_completion_interruptible(&comp_write);
 	if(__copy_to_user(buf, (char *)info->op_pages[8], len))
         return -EFAULT;
     
@@ -348,7 +348,7 @@ long chrif_ioctl(struct file *filp, unsigned int cmd, unsigned long arg)
     }
      
     //wait for response from dom0,then go on
-    wait_for_completion(&comp_ioctl);
+    wait_for_completion_interruptible(&comp_ioctl);
     printk(KERN_INFO "\nxen: DOmU: ioctl op finished");
     
     /* pdma stat */
